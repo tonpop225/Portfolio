@@ -1,0 +1,53 @@
+.scale-text-slider {
+  position: relative;
+  width: auto;
+}
+.scale-text-slider > div {
+	display: none;
+}
+.scale-text-slider > div.active {
+	display: block;
+	color: transparent;
+  animation: slider_text 5s;
+}
+
+@keyframes slider_text {
+	15% {
+		color: #fff;	
+	}
+	85% {
+		color: #fff;
+	}
+}
+.scale-text-slider > div.active:before {
+	position: absolute;
+	content: "";
+	height: 110%;
+	width: 100%;
+	top: -5%;
+	background: #fff;
+  animation: slider_text_before 5s;
+}
+
+@keyframes slider_text_before {
+	0% {
+		right: 0;
+		transform: scaleX(1);
+		transform-origin: right;
+	}
+	15% {
+		right: 0;
+		transform: scaleX(0);
+		transform-origin: right;
+	}
+	85% {
+		transform-origin: left;
+		transform: scaleX(0);
+
+	}
+	100% {
+		left: 0;
+		transform: scaleX(1);
+		transform-origin: left;
+	}
+}
