@@ -75,72 +75,83 @@ jQuery(document).ready(function($){
         $(".services").addClass("active");
       };
       if (window_width < 768){
-        $(".single-portfolio img").addClass("disable-animation");
+        // $(".single-portfolio img").addClass("disable-animation");
         $(".banner").addClass("banner-bg");
       } else {
-        $(".single-portfolio img").removeClass("disable-animation");
+        // $(".single-portfolio img").removeClass("disable-animation");
         $(".banner").removeClass("banner-bg");
       }
     });
 
     // Returns true if the specified element has been scrolled into the viewport.
-    function isElementInViewport(elem) {
-        var $elem = $(elem);
+    // function isElementInViewport(elem) {
+    //     var $elem = $(elem);
 
-        // Get the scroll position of the page.
-        var scrollElem = ((navigator.userAgent.toLowerCase().indexOf('webkit') != -1) ? 'body' : 'html');
-        var viewportTop = $(scrollElem).scrollTop();
-        var viewportBottom = viewportTop + $(window).height();
+    //     // Get the scroll position of the page.
+    //     var scrollElem = ((navigator.userAgent.toLowerCase().indexOf('webkit') != -1) ? 'body' : 'html');
+    //     var viewportTop = $(scrollElem).scrollTop();
+    //     var viewportBottom = viewportTop + $(window).height();
 
-        // Get the position of the element on the page.
-        var elemTop = Math.round( $elem.offset().top );
-        var elemBottom = elemTop + $elem.height();
+    //     // Get the position of the element on the page.
+    //     var elemTop = Math.round( $elem.offset().top );
+    //     var elemBottom = elemTop + $elem.height();
 
-        return ((elemTop < viewportBottom) && (elemBottom > viewportTop));
-    }
+    //     return ((elemTop < viewportBottom) && (elemBottom > viewportTop));
+    // }
 
-    // Check if it's time to start the animation.
-    function checkAnimation() {
-        var $elem = $('.anim');
+    // // Check if it's time to start the animation.
+    // function checkAnimation() {
+    //     var $elem = $('.anim');
 
-        // If the animation has already been started
-        if ($elem.hasClass('start')) return;
+    //     // If the animation has already been started
+    //     if ($elem.hasClass('start')) return;
 
-        if (isElementInViewport($elem)) {
-            // Start the animation
-            $elem.addClass('start');
-        }
-    }
+    //     if (isElementInViewport($elem)) {
+    //         // Start the animation
+    //         $elem.addClass('start');
+    //     }
+    // }
 
-    // Capture scroll events
-    $(window).scroll(function(){
-        checkAnimation();
-    });
+    // // Capture scroll events
+    // $(window).scroll(function(){
+    //     checkAnimation();
+    // });
 
 
     
-    // $(window).ready(function() {
-    //     $(".portfolio-wrap .row .col:nth-child(6n+1) .single-portfolio").addClass("nth-1");
-    //     $(".portfolio-wrap .row .col:nth-child(6n+2) .single-portfolio").addClass("nth-2");
-    //     $(".portfolio-wrap .row .col:nth-child(6n+3) .single-portfolio").addClass("nth-3");
-    //     $(".portfolio-wrap .row .col:nth-child(6n+4) .single-portfolio").addClass("nth-4");
-    //     $(".portfolio-wrap .row .col:nth-child(6n+5) .single-portfolio").addClass("nth-5");
-    //     $(".portfolio-wrap .row .col:nth-child(6n+6) .single-portfolio").addClass("nth-6");
+    $(window).ready(function() {
+        $(".portfolio-wrap .row .col:nth-child(6n+1) .single-portfolio").addClass("nth-1");
+        $(".portfolio-wrap .row .col:nth-child(6n+2) .single-portfolio").addClass("nth-2");
+        $(".portfolio-wrap .row .col:nth-child(6n+3) .single-portfolio").addClass("nth-3");
+        $(".portfolio-wrap .row .col:nth-child(6n+4) .single-portfolio").addClass("nth-4");
+        $(".portfolio-wrap .row .col:nth-child(6n+5) .single-portfolio").addClass("nth-5");
+        $(".portfolio-wrap .row .col:nth-child(6n+6) .single-portfolio").addClass("nth-6");
 
-    //     // alert($(".portfolio-wrap .row .col").length);
 
-    //     // if ( $(".portfolio-wrap .row .col").length = 6n + 1 ) {
-    //     //     alert("6n+1 true");
-    //     //     $(".portfolio-wrap .row .col:last-child .single-portfolio").removeClass("nth-1");
-    //     //     $(".portfolio-wrap .row .col:last-child .single-portfolio").removeClass("nth-2");
-    //     // };
-    //     // if ( $(".portfolio-wrap .row .col").length = 6n + 4 ) {
-    //     //     alert("6n+4 true");
-    //     //     $(".portfolio-wrap .row .col:last-child .single-portfolio").removeClass("nth-4");
-    //     //     $(".portfolio-wrap .row .col:last-child .single-portfolio").removeClass("nth-5");
-    //     // };
+        if ( $(".portfolio-wrap .row .col").length >= 12 ) {
+            $(".portfolio-wrap a.see-more").css("display", "inline-block");
+        } else {
+            $(".portfolio-wrap a.see-more").css("display", "none");
+        }
 
-    // });
+        // alert($(".portfolio-wrap .row .col").length);
+
+        // var n = 6;
+        // while (n < 20) {
+        //     n += 6;
+
+        //     if ( $(".portfolio-wrap .row .col").length == 6 * n + 1 ) {
+        //         alert("6n+1 true" + $(".portfolio-wrap .row .col").length + " " + n);
+        //         $(".portfolio-wrap .row .col:last-child .single-portfolio").removeClass("nth-1");
+        //         $(".portfolio-wrap .row .col:last-child .single-portfolio").addClass("nth-2");
+        //     } else if ( $(".portfolio-wrap .row .col").length == 6 * n + 4 ) {
+        //         alert("6n+4 true");
+        //         $(".portfolio-wrap .row .col:last-child .single-portfolio").removeClass("nth-4");
+        //         $(".portfolio-wrap .row .col:last-child .single-portfolio").addClass("nth-5");
+        //     };   
+        // };
+
+    });
 
 
 
