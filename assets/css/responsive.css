@@ -104,7 +104,7 @@ h1.section-heading {
     height: calc(var(--portfolio-card-height-2) + 60px);
 }
 .single-portfolio.nth-6 {
-    margin-top: -60px;
+    margin-top: -65px;
 }
 .single-portfolio.nth-5 {
     height: calc(var(--portfolio-card-height-1) + 30px);
@@ -255,8 +255,16 @@ h1.section-heading {
 .section-title-warp p {
     font-size: 12px;
 }
-
-
+.about-img img {
+    border: 7px solid #F5F5F5;
+}
+.about-img::before {
+    border-width: 7px;
+}
+h1.section-heading {
+    margin-bottom: 8px;
+    font-size: 28px;
+}
 
  }
 
