@@ -122,6 +122,7 @@ h1.section-heading {
 
 /*====== Pre-loder ============*/
 .loader {
+  /*display: none;*/
   height: 100vh;
   width: 100%;
   position: fixed;
@@ -673,6 +674,12 @@ span.username::before {
     --portfolio-card-height-1: 550px;
     --portfolio-card-height-2: 650px;
 }
+.single-portfolio img { 
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 .single-portfolio.nth-1,.single-portfolio.nth-3,.single-portfolio.nth-5 {
     height: var(--portfolio-card-height-1);
 }
@@ -680,29 +687,31 @@ span.username::before {
     height: var(--portfolio-card-height-2);
 }
 .single-portfolio.nth-4,.single-portfolio.nth-6 {
-    margin-top: -90px;
+    margin-top: -95px;
 }
 .single-portfolio::after {
   content: '';
   background: #fff;
-  height: 100%;
+  height: 10%;
   width: 100%;
-  top: 0;
+  bottom: 0;
   left: 0;
   opacity: 0;
   position: absolute;
   transition: .3s;
 }
 .single-portfolio:hover:after {
-  opacity: 80%;
+  opacity: 70%;
 }
 .portfolio-link-btn {
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 10%;
   width:  100%;
+  bottom: 0;
+  left: 0;
 }
 .portfolio-link-btn a {
   z-index: 1;
@@ -713,13 +722,9 @@ span.username::before {
   opacity: 1;
   visibility: visible;
 }
-.single-portfolio.nth-1 img,
-.single-portfolio.nth-3 img,
-.single-portfolio.nth-5 img {
-  max-width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+.single-portfolio.nth-1:hover img,
+.single-portfolio.nth-3:hover img,
+.single-portfolio.nth-5:hover img {
   animation: portfolio_img_roll_1 30s infinite;
 }
 @keyframes portfolio_img_roll_1 {
@@ -732,13 +737,9 @@ span.username::before {
     transition-timing-function: linear;
   }
 }
-.single-portfolio.nth-2 img,
-.single-portfolio.nth-4 img,
-.single-portfolio.nth-6 img {
-  max-width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+.single-portfolio.nth-2:hover img,
+.single-portfolio.nth-4:hover img,
+.single-portfolio.nth-6:hover img {
   animation: portfolio_img_roll_2 30s infinite;
 }
 @keyframes portfolio_img_roll_2 {
